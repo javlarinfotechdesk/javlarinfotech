@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080b16">
+<title>Javlar Infotech | Digital & Technology Solutions</title>
+<meta name="description" content="Javlar Infotech delivers modern web, software and digital technology solutions for growing businesses.">
+<style>
+:root{
+  --bg:#070a12;--bg2:#0b1020;--panel:#101728;--ink:#f7f8fb;--muted:#a8b1c4;
+  --line:rgba(255,255,255,.11);--accent:#8b5cf6;--accent2:#2563eb;--cyan:#22d3ee;
+  --white:#fff;--max:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;line-height:1.6;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+button{font:inherit}
+.wrap{width:min(var(--max),calc(100% - 44px));margin:auto}
+header{position:fixed;top:0;left:0;right:0;z-index:50;border-bottom:1px solid rgba(255,255,255,.08);background:rgba(7,10,18,.72);backdrop-filter:blur(18px)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:21px;font-weight:850;letter-spacing:-.7px}
+.logo span{color:#7c8cff}
+.links{display:flex;gap:30px;align-items:center;font-size:14px;color:#dbe1ee}
+.links a{opacity:.86;transition:.2s}.links a:hover{opacity:1;color:#fff}
+.nav-cta{padding:11px 17px;border:1px solid rgba(255,255,255,.15);border-radius:999px;background:#fff;color:#0a0d16;font-weight:800}
+.menu{display:none;background:none;border:0;color:#fff;font-size:25px}
+
+.hero{min-height:850px;display:flex;align-items:center;position:relative;overflow:hidden;padding:150px 0 90px;
+background:
+radial-gradient(circle at 76% 30%,rgba(124,92,246,.24),transparent 27%),
+radial-gradient(circle at 20% 70%,rgba(34,211,238,.10),transparent 25%),
+linear-gradient(180deg,#070a12,#0a0f1d 65%,#070a12)}
+.grid-bg{position:absolute;inset:0;opacity:.28;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:55px 55px;mask-image:linear-gradient(to bottom,transparent 0,#000 18%,#000 78%,transparent 100%)}
+.orb{position:absolute;border-radius:50%;filter:blur(1px);pointer-events:none}
+.orb.one{width:420px;height:420px;right:-100px;top:150px;background:radial-gradient(circle,rgba(124,92,246,.23),transparent 65%);animation:float 9s ease-in-out infinite}
+.orb.two{width:300px;height:300px;left:-100px;bottom:40px;background:radial-gradient(circle,rgba(34,211,238,.13),transparent 65%);animation:float 11s ease-in-out infinite reverse}
+@keyframes float{50%{transform:translate3d(0,-22px,0) scale(1.04)}}
+
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:75px;align-items:center}
+.kicker{display:inline-flex;gap:8px;align-items:center;color:#cbd5ff;font-size:12px;font-weight:850;letter-spacing:2px;text-transform:uppercase}
+.kicker:before{content:"";width:30px;height:1px;background:linear-gradient(90deg,var(--cyan),var(--accent))}
+h1{font-size:clamp(48px,6.2vw,82px);line-height:.98;letter-spacing:-4px;margin:20px 0 25px;max-width:760px}
+.gradient-text{background:linear-gradient(90deg,#fff 10%,#a9b7ff 55%,#9b7cff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:19px;color:#b5bfd2;max-width:660px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 19px;border-radius:10px;font-weight:800;font-size:14px;transition:.22s;border:1px solid transparent}
+.btn.primary{background:#fff;color:#080b12;box-shadow:0 12px 40px rgba(255,255,255,.10)}
+.btn.primary:hover{transform:translateY(-2px);box-shadow:0 16px 45px rgba(255,255,255,.16)}
+.btn.ghost{border-color:rgba(255,255,255,.16);color:#fff;background:rgba(255,255,255,.035)}
+.btn.ghost:hover{background:rgba(255,255,255,.08)}
+
+.hero-card{position:relative;min-height:480px;border:1px solid rgba(255,255,255,.13);border-radius:28px;background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025));box-shadow:0 30px 100px rgba(0,0,0,.35);overflow:hidden;padding:25px}
+.hero-card:before{content:"";position:absolute;width:260px;height:260px;border-radius:50%;right:-70px;top:-70px;background:radial-gradient(circle,rgba(124,92,246,.45),transparent 68%)}
+.hero-card:after{content:"";position:absolute;left:-90px;bottom:-120px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(34,211,238,.17),transparent 65%)}
+.window{position:relative;z-index:2;border:1px solid rgba(255,255,255,.12);border-radius:18px;background:rgba(5,8,16,.62);overflow:hidden}
+.window-top{height:44px;border-bottom:1px solid rgba(255,255,255,.08);display:flex;align-items:center;gap:7px;padding:0 15px}
+.dot{width:8px;height:8px;border-radius:50%;background:#596176}
+.window-body{padding:26px}
+.code-line{height:9px;border-radius:8px;background:rgba(255,255,255,.10);margin:12px 0}
+.code-line.short{width:42%}.code-line.mid{width:68%}.code-line.long{width:88%}
+.signal{margin-top:26px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.signal div{padding:14px;border:1px solid rgba(255,255,255,.09);border-radius:13px;background:rgba(255,255,255,.035)}
+.signal b{font-size:22px}.signal small{display:block;color:#8f9ab0;margin-top:4px}
+.floating{position:absolute;z-index:3;right:16px;bottom:20px;padding:14px 16px;border:1px solid rgba(255,255,255,.14);border-radius:15px;background:rgba(13,18,32,.85);backdrop-filter:blur(10px);box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.floating span{display:block;color:#7dd3fc;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase}.floating b{font-size:15px}
+
+.trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#090d18}
+.trust-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px}
+.trust-item{padding:30px 24px;border-right:1px solid var(--line)}
+.trust-item:last-child{border-right:0}.trust-item b{font-size:28px}.trust-item span{display:block;color:#8f9ab0;font-size:13px;margin-top:4px}
+
+section{padding:105px 0;position:relative}
+.section-kicker{color:#9ea9ff;font-size:12px;letter-spacing:2px;font-weight:850;text-transform:uppercase}
+.section-title{font-size:clamp(34px,4vw,54px);line-height:1.02;letter-spacing:-2.4px;margin:12px 0 16px}
+.section-copy{color:#a8b1c4;max-width:700px;font-size:17px}
+.head-row{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:45px}
+
+.services{background:linear-gradient(180deg,#0a0f1b,#080b13)}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.service{min-height:270px;padding:28px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.025);transition:.25s;position:relative;overflow:hidden}
+.service:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 10% 0,rgba(124,92,246,.12),transparent 35%);opacity:0;transition:.25s}
+.service:hover{transform:translateY(-5px);border-color:rgba(139,92,246,.4);background:rgba(255,255,255,.045)}
+.service:hover:before{opacity:1}
+.num{color:#68738a;font-size:12px;font-weight:850;letter-spacing:1px}
+.service h3{font-size:22px;margin:48px 0 10px}.service p{color:#9ea8bb;font-size:14px;margin:0}
+.service a{display:inline-block;margin-top:22px;color:#dbe2ff;font-size:13px;font-weight:800}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.cap-list{display:grid;gap:13px;margin-top:28px}
+.cap{display:flex;gap:14px;padding:15px 0;border-bottom:1px solid var(--line)}
+.cap i{width:27px;height:27px;border-radius:8px;background:linear-gradient(135deg,rgba(124,92,246,.3),rgba(34,211,238,.16));border:1px solid rgba(255,255,255,.1);display:grid;place-items:center;font-style:normal;color:#d9ddff;font-size:12px}
+.cap b{font-size:14px}.cap span{display:block;color:#8994a9;font-size:13px;margin-top:2px}
+.panel{border:1px solid var(--line);border-radius:24px;background:linear-gradient(145deg,#10182b,#0a0e18);padding:34px;min-height:390px;position:relative;overflow:hidden}
+.panel .ring{position:absolute;width:310px;height:310px;border-radius:50%;border:1px solid rgba(139,92,246,.22);right:-90px;top:-70px}
+.panel .ring:after{content:"";position:absolute;inset:35px;border:1px solid rgba(34,211,238,.16);border-radius:50%}
+.panel-content{position:relative;z-index:2}.panel h3{font-size:28px;margin:0 0 12px}.panel p{color:#9da8bb}.tagrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}.tag{border:1px solid var(--line);padding:8px 11px;border-radius:999px;color:#c6cee0;font-size:12px;background:rgba(255,255,255,.025)}
+
+.process{background:#0a0e18}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.step{padding:25px;border-top:1px solid rgba(255,255,255,.16)}
+.step .n{font-size:12px;color:#8290a8;font-weight:850}.step h3{margin:24px 0 8px;font-size:18px}.step p{color:#8f9ab0;font-size:13px}
+
+.cta{padding:110px 0;background:
+radial-gradient(circle at 50% 0,rgba(124,92,246,.24),transparent 42%),
+linear-gradient(180deg,#0a0e18,#070a12)}
+.cta-box{border:1px solid rgba(255,255,255,.13);border-radius:26px;padding:60px;text-align:center;background:rgba(255,255,255,.025)}
+.cta-box h2{font-size:clamp(36px,5vw,62px);line-height:1;letter-spacing:-2.8px;margin:0 0 16px}.cta-box p{color:#a8b1c4;margin:0 auto;max-width:650px}.cta-box .actions{justify-content:center}
+
+footer{border-top:1px solid var(--line);background:#05070d;padding:25px 0;color:#7f8a9f;font-size:13px}
+.footer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer strong{color:#dce2ef}
+
+@media(max-width:900px){
+  .links{display:none}.menu{display:block}.nav-cta{display:none}
+  .hero{min-height:auto;padding:130px 0 70px}.hero-grid,.split{grid-template-columns:1fr;gap:45px}
+  h1{letter-spacing:-3px}.hero-card{min-height:390px}.trust-row{grid-template-columns:repeat(2,1fr)}
+  .trust-item:nth-child(2){border-right:0}.trust-item{border-bottom:1px solid var(--line)}
+  .service-grid{grid-template-columns:1fr 1fr}.process-grid{grid-template-columns:1fr 1fr}
+  .head-row{display:block}.section-copy{margin-top:15px}
+}
+@media(max-width:620px){
+  .wrap{width:min(var(--max),calc(100% - 30px))}.hero{padding-top:115px}
+  h1{font-size:47px;letter-spacing:-2.5px}.lead{font-size:17px}.hero-card{min-height:330px;padding:15px}
+  .window-body{padding:20px}.signal{grid-template-columns:1fr}.signal div{padding:10px}
+  .floating{right:10px;bottom:10px}.service-grid,.process-grid,.trust-row{grid-template-columns:1fr}
+  .trust-item{border-right:0}.cta-box{padding:38px 22px}.section-title{letter-spacing:-1.8px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#home">Javlar <span>Infotech</span></a>
+    <nav class="links">
+      <a href="#home">Home</a><a href="#services">Services</a><a href="#capabilities">Capabilities</a><a href="#process">How we work</a><a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-cta" href="#contact">Let's talk →</a>
+    <button class="menu" aria-label="Menu" onclick="document.querySelector('.links').classList.toggle('mobile')">☰</button>
+  </div>
+</header>
+
+<main id="home">
+<section class="hero">
+  <div class="grid-bg"></div><div class="orb one"></div><div class="orb two"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <div class="kicker">Digital • Technology • Business</div>
+      <h1>Technology that <span class="gradient-text">moves business forward.</span></h1>
+      <p class="lead">Javlar Infotech helps businesses build better digital experiences, streamline technology and turn practical ideas into reliable solutions.</p>
+      <div class="actions">
+        <a class="btn primary" href="#contact">Start a conversation →</a>
+        <a class="btn ghost" href="#services">Explore capabilities</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="window">
+        <div class="window-top"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+        <div class="window-body">
+          <div style="color:#aab5ff;font-size:12px;font-weight:800;letter-spacing:1.5px">JAVLAR DIGITAL WORKSPACE</div>
+          <div class="code-line long"></div><div class="code-line mid"></div><div class="code-line short"></div>
+          <div class="signal">
+            <div><b>Web</b><small>Modern experiences</small></div>
+            <div><b>Cloud</b><small>Scalable systems</small></div>
+            <div><b>Data</b><small>Useful insights</small></div>
+          </div>
+        </div>
+      </div>
+      <div class="floating"><span>Approach</span><b>Build • Improve • Grow</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="trust">
+  <div class="wrap trust-row">
+    <div class="trust-item"><b>01</b><span>Business-first thinking</span></div>
+    <div class="trust-item"><b>02</b><span>Modern digital delivery</span></div>
+    <div class="trust-item"><b>03</b><span>Clear communication</span></div>
+    <div class="trust-item"><b>04</b><span>Long-term support</span></div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="head-row">
+      <div><div class="section-kicker">What we do</div><h2 class="section-title">Capabilities built around your goals.</h2></div>
+      <p class="section-copy">From a polished company website to practical software and digital support, we focus on solutions that are useful, scalable and easy to maintain.</p>
+    </div>
+    <div class="service-grid">
+      <article class="service"><div class="num">01 / WEB</div><h3>Web & Digital Experiences</h3><p>Professional corporate websites, landing pages and responsive digital experiences designed for trust and conversion.</p><a href="#contact">Discuss a website →</a></article>
+      <article class="service"><div class="num">02 / SOFTWARE</div><h3>Software Solutions</h3><p>Business-focused applications and workflows tailored to real operational requirements.</p><a href="#contact">Discuss a solution →</a></article>
+      <article class="service"><div class="num">03 / SUPPORT</div><h3>Technology Support</h3><p>Ongoing improvements, troubleshooting and technology guidance to keep digital operations moving.</p><a href="#contact">Get support →</a></article>
+      <article class="service"><div class="num">04 / AUTOMATION</div><h3>Digital Automation</h3><p>Reduce repetitive work with practical automation ideas, integrations and streamlined processes.</p><a href="#contact">Explore automation →</a></article>
+      <article class="service"><div class="num">05 / DATA</div><h3>Data & Reporting</h3><p>Clear dashboards, reporting workflows and data solutions that help teams make better decisions.</p><a href="#contact">Discuss data →</a></article>
+      <article class="service"><div class="num">06 / CONSULTING</div><h3>Technology Consulting</h3><p>Understand the problem, choose the right technology and create a practical path from idea to implementation.</p><a href="#contact">Talk to us →</a></article>
+    </div>
+  </div>
+</section>
+
+<section id="capabilities">
+  <div class="wrap split">
+    <div>
+      <div class="section-kicker">Why Javlar</div>
+      <h2 class="section-title">Less complexity. More useful technology.</h2>
+      <p class="section-copy">We keep the focus on business outcomes: a better customer experience, smoother operations and technology that can grow with you.</p>
+      <div class="cap-list">
+        <div class="cap"><i>01</i><div><b>Business-focused approach</b><span>Technology choices start with the business problem.</span></div></div>
+        <div class="cap"><i>02</i><div><b>Modern & responsive</b><span>Solutions designed for today's devices and workflows.</span></div></div>
+        <div class="cap"><i>03</i><div><b>Clear communication</b><span>Simple explanations, visible progress and practical decisions.</span></div></div>
+        <div class="cap"><i>04</i><div><b>Long-term mindset</b><span>Build today without making tomorrow unnecessarily difficult.</span></div></div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="ring"></div>
+      <div class="panel-content">
+        <div class="section-kicker">Technology landscape</div>
+        <h3>From idea to digital delivery.</h3>
+        <p>We can help shape the right combination of web, software, automation, data and support for your business.</p>
+        <div class="tagrow">
+          <span class="tag">Web</span><span class="tag">Software</span><span class="tag">APIs</span><span class="tag">Cloud</span><span class="tag">Automation</span><span class="tag">Data</span><span class="tag">Digital Support</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="head-row">
+      <div><div class="section-kicker">How we work</div><h2 class="section-title">A simple path from problem to solution.</h2></div>
+      <p class="section-copy">A straightforward process keeps projects focused and makes progress easy to understand.</p>
+    </div>
+    <div class="process-grid">
+      <div class="step"><div class="n">01 — DISCOVER</div><h3>Understand</h3><p>We understand your business, users, goals and the problem worth solving.</p></div>
+      <div class="step"><div class="n">02 — PLAN</div><h3>Shape</h3><p>We define the right scope, priorities and technology approach.</p></div>
+      <div class="step"><div class="n">03 — BUILD</div><h3>Deliver</h3><p>We build, test and refine the solution with clear milestones.</p></div>
+      <div class="step"><div class="n">04 — GROW</div><h3>Improve</h3><p>We support improvements as your business and technology needs evolve.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div class="cta-box">
+      <div class="section-kicker">Let's build something useful</div>
+      <h2>Have a technology idea?</h2>
+      <p>Tell us what you are trying to build, improve or automate. We will discuss the next practical step.</p>
+      <div class="actions">
+        <a class="btn primary" href="mailto:info@javlarinfotech.in?subject=Javlar%20Infotech%20Enquiry">Email Javlar Infotech →</a>
+        <a class="btn ghost" href="https://wa.me/919410000000">WhatsApp us</a>
+      </div>
+      <p style="margin-top:25px;font-size:13px">Javlar Infotech · Gorakhpur, Uttar Pradesh, India · info@javlarinfotech.in</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap footer">
+    <div>© 2026 <strong>Javlar Infotech</strong>. All rights reserved.</div>
+    <div>javlarinfotech.in</div>
+  </div>
+</footer>
+
+<style>
+.links.mobile{display:flex;position:absolute;top:76px;left:15px;right:15px;flex-direction:column;gap:0;padding:10px;background:rgba(10,14,24,.97);border:1px solid rgba(255,255,255,.12);border-radius:14px;box-shadow:0 20px 50px rgba(0,0,0,.4)}
+.links.mobile a{padding:13px}
+</style>
+</body>
+</html>
